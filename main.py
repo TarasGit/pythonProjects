@@ -52,9 +52,9 @@ def get_bible_verse(book, chapter, translation='rst'):
 
 if __name__ == "__main__":
         for counter in range(2,8):
-            #quote = "John 2:"+str(counter)
-            #text = get_bible_quote(quote)
-            #send_telegram_message(GROUP_ID, text)
+            quote = "John 2:"+str(counter)
+            text = get_bible_quote(quote)
+            send_telegram_message(GROUP_ID, text)
 
             # russian
             verse = get_bible_verse('1', str(counter))
