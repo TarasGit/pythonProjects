@@ -12,9 +12,7 @@ if BOT_TOKEN is None:
 else:
     print(f"✅ Success! Token starts with: {BOT_TOKEN[:5]}...")
 
-def send_telegram_message(chat_id, text):
-    print("Call Send Telegram Message")
-
+def log_tokens():
     if BOT_TOKEN:
         print("BOT_TOKEN")
         # Print the length and the first 3 characters to verify it's the right token
@@ -32,6 +30,9 @@ def send_telegram_message(chat_id, text):
     else:
         print("❌ Secret 'GROUP_ID' is empty or not found.")
 
+
+def send_telegram_message(chat_id, text):
+    print("Call Send Telegram Message")
     url = "https://api.telegram.org/bot" + str(BOT_TOKEN) + "/sendMessage"
     params = {"chat_id": chat_id, "text": text}
     response = requests.get(url, params=params)
@@ -71,10 +72,11 @@ def get_bible_verse(book, chapter, translation='rst'):
 # Получить главу 1 из книги Бытие (Genesis)
 
 if __name__ == "__main__":
+        # log_tokens() # Enable debuggings of tokens
         for counter in range(2,8):
-            quote = "John 2:"+str(counter)
-            text = get_bible_quote(quote)
-            send_telegram_message(GROUP_ID, text)
+            #quote = "John 2:"+str(counter)
+            #text = get_bible_quote(quote)
+            #send_telegram_message(GROUP_ID, text)
 
             # russian
             verse = get_bible_verse('1', str(counter))
