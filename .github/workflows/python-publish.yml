@@ -16,3 +16,8 @@ jobs:
     steps:
       - name: Print echo
         run: echo "Hello world!"
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      
