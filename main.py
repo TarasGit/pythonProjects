@@ -14,6 +14,14 @@ else:
 
 def send_telegram_message(chat_id, text):
     print("Call Send Telegram Message")
+
+    if BOT_TOKEN:
+        # Print the length and the first 3 characters to verify it's the right token
+        print(f"✅ Secret found! Length: {len(BOT_TOKEN)}")
+        print(f"✅ Starts with: {BOT_TOKEN[:3]}...")
+    else:
+        print("❌ Secret 'BOT_TOKEN' is empty or not found.")
+
     url = "https://api.telegram.org/bot" + str(BOT_TOKEN) + "/sendMessage"
     params = {"chat_id": chat_id, "text": text}
     response = requests.get(url, params=params)
