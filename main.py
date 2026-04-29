@@ -14,7 +14,7 @@ else:
 
 def send_telegram_message(chat_id, text):
     print("Call Send Telegram Message")
-    url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage"
+    url = "https://api.telegram.org/bot" + str(BOT_TOKEN) + "/sendMessage"
     params = {"chat_id": chat_id, "text": text}
     response = requests.get(url, params=params)
     print(response.text)
