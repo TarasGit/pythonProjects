@@ -35,4 +35,5 @@ jobs:
         env:
           # This maps the GitHub Secret to an Environment Variable
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GROUP_ID: ${{ secrets.GROUP_ID }}
         run: python main.py
