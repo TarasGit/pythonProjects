@@ -13,10 +13,12 @@ else:
     print(f"✅ Success! Token starts with: {BOT_TOKEN[:5]}...")
 
 def send_telegram_message(chat_id, text):
+    print("Call Send Telegram Message")
     url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage"
     params = {"chat_id": chat_id, "text": text}
     response = requests.get(url, params=params)
     print(response.text)
+    print("End of Telegram Message")
 
 def get_bible_quote(line):
     # Wir suchen Johannes 3, Vers 16
