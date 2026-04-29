@@ -8,27 +8,11 @@
 
 name: Upload Python Package
 
-on:
-  release:
-    types: [published]
-
-permissions:
-  contents: read
+on: [push]
 
 jobs:
-  release-build:
+  run-first-command:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Build release distributions
-        run: |
-          # NOTE: put your own distribution build steps here.
-          python -m pip install build
-          python -m build
-          python main.py
+      - name: Print echo
+        run: echo "Hello world!"
